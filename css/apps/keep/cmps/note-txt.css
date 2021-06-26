@@ -1,0 +1,13 @@
+.note-txt {
+	display: inline-block;
+	text-align: justify;
+	padding: 5px;
+}
+
+.button-keep.long-txt {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border: 1px solid black;
+	border: none;
+}

@@ -1,0 +1,23 @@
+.note-todos {
+	text-align: left;
+	display: inline-block;
+}
+
+.todos-completed {
+	font-size: small;
+	font-style: italic;
+}
+
+.completed {
+	text-decoration: line-through;
+}
+
+.keep-form-todos {
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+}
+
+.button-keep.todos {
+	padding: unset;
+}

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+:root {
+    --color: #1ff4f4;
+}
+
+.hero {
+    position: relative;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline-start: 50px;
+    padding-block-start: 100px;
+    z-index: 1;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9)), url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cccccc' fill-opacity='0.7' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.content>p {
+    color: black;
+    font-size: 3rem;
+    width: 80%;
+    padding-block-start: 30px;
+}
+
+.content>p:nth-of-type(2) {
+    direction: rtl;
+    font-size: 1.5rem;
+    font-style: oblique;
+    padding-block-start: 10px;
+    color: rgb(90, 90, 90);
+}
+
+.stripe-text {
+    position: relative;
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Paytone One';
+    font-style: italic;
+    pointer-events: none;
+}
+
+.stripe-text:after {
+    position: relative;
+    left: 0;
+    content: 'AppSus';
+    padding-inline-end: 17px;
+    background: -webkit-repeating-linear-gradient(135deg, #f41fbf, #f41fbf 20px, #ffed28 20px, #ffed28 40px, #b028ff 40px, #b028ff 60px, #39dbc2 60px, #39dbc2 80px);
+    /* background: -webkit-repeating-linear-gradient(135deg, #1eb5ff, #1ff4f4 20px); */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-stroke-width: 5.5px;
+    -webkit-text-stroke-color: white;
+    pointer-events: none;
+}
+
+.stripe-text:before {
+    position: absolute;
+    content: 'AppSus';
+    color: #1f97f4;
+    top: 0px;
+    left: 0px;
+    /* text-shadow: 5px 0px #f41fbf, 6px 1px #f41fbf, 7px 2px #f41fbf, 8px 3px #f41fbf, 9px 4px #f41fbf, 10px 5px #f41fbf, 11px 6px #f41fbf, 12px 7px #f41fbf, 13px 8px #f41fbf, 14px 9px #f41fbf, 15px 10px #f41fbf; */
+    text-shadow: 5px 0px #1eb5ff, 6px 1px #1eb5ff, 7px 2px #1f51f4, 8px 3px #1eb5ff, 9px 4px #1fdbf4, 10px 5px #1eb5ff, 11px 6px #1ff4f4, 12px 7px #1eb5ff, 13px 8px #1fd4f4, 14px 9px #1eb5ff, 15px 10px #ffffff;
+    pointer-events: none;
+}
+
+@media (max-width: 850px) {
+    .stripe-text {
+        position: relative;
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: 'Catamaran', sans-serif;
+        font-style: italic;
+        pointer-events: none;
+    }
+    .content>p {
+        font-size: 1.5rem;
+    }
+    .content>p:nth-of-type(2) {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .stripe-text {
+        position: relative;
+        font-size: 3.8rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: 'Catamaran', sans-serif;
+        font-style: italic;
+        pointer-events: none;
+    }
+}
+
+
+/* ========================= */
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    background-color: var(--color);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+}
+
+.waves::before,
+.waves::after {
+    content: '';
+    position: absolute;
+    width: 300vw;
+    height: 300vw;
+    top: -65vw;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+.waves::before {
+    border-radius: 44%;
+    background: #f41fbf;
+    animation: waves 8s linear infinite;
+}
+
+.waves::after {
+    border-radius: 44%;
+    background-color: #ffffff;
+    animation: waves 15s linear infinite;
+}
+
+@keyframes waves {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}

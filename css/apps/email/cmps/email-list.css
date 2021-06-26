@@ -1,0 +1,70 @@
+.email-list {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    overflow: hidden;
+}
+
+.email-empty-list {
+    flex-basis: 50%;
+    padding-inline: 20px;
+    padding-block: 0;
+}
+
+
+/***************************/
+
+.email-list {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+}
+
+@media (max-width: 1300px) {
+    .email-list {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+}
+
+@media (max-width: 850px) {
+    .email-list {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        margin-inline-start: 10px;
+    }
+    .email-list>div {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ham-menu-block {
+        min-width: 50px;
+        max-width: 50px;
+    }
+}
+
+
+/***************************/
+
+.email-previews {
+    overflow-y: auto;
+}
+
+.email-previews::-webkit-scrollbar {
+    width: 9px;
+    height: 16px;
+}
+
+.email-previews::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.email-previews::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.email-previews::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
+}

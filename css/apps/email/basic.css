@@ -1,0 +1,179 @@
+@import url('cmps/email-list.css');
+@import url('cmps/email-nav.css');
+@import url('cmps/email-status.css');
+@import url('cmps/email-search.css');
+@import url('cmps/email-preview.css');
+@import url('cmps/email-compose.css');
+@import url('pages/email-details.css');
+@import url('pages/email-app.css');
+
+/***********************/
+
+@font-face {
+    font-family: fontawesome;
+    src: url('../../../font/apps/book/fontawesome.woff');
+}
+
+@font-face {
+    font-family: fontawesomer;
+    src: url('../../../font/apps/book/fontawesomer.ttf');
+}
+
+
+/***********************/
+
+[class*=input-email],
+[class*=input-email]:focus {
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+    line-height: 1.8;
+}
+
+textarea,
+textarea:focus {
+    border: 1px solid #9999997c;
+    width: 91%;
+    height: 100%;
+    min-height: 125px;
+    outline: none;
+}
+
+[class*=btn-email] {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    outline: none;
+    position: relative;
+    z-index: 0;
+    font-size: .875rem;
+    letter-spacing: .25px;
+    background: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #5f6368;
+    cursor: pointer;
+    font-weight: 500;
+    height: 36px;
+    min-width: 80px;
+    width: max-content;
+    outline: none;
+    padding: 0 16px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+}
+
+[class*=btn-email]:hover {
+    box-shadow: 0 1px 2px 0 rgba(26, 115, 232, 0.451), 0 1px 3px 1px rgba(26, 115, 232, 0.302);
+    background-color: #297be6;
+    outline: 1px solid transparent;
+    border: none;
+}
+
+.user-msg {
+    position: absolute;
+    top: 45px;
+    right: 15px;
+    padding-block: 15px;
+    padding-inline-end: 40px;
+    padding-inline-start: 10px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    z-index: 3;
+}
+
+.user-msg>span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block-end: 5px;
+    margin-block-start: 5px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 20px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+}
+
+.user-msg a {
+    font-size: 1.1rem;
+    margin: auto;
+    padding-block-start: 10px;
+    padding-inline-start: 30px;
+}
+
+.user-msg>p {
+    color: #565656;
+    display: flex;
+    align-items: center;
+    line-height: 0.8;
+    flex-wrap: wrap;
+    width: 320px;
+}
+
+.user-msg>p>span {
+    font-size: 1.5rem;
+    padding-inline-start: 5px;
+    padding-inline-end: 10px;
+    padding-block-start: 5px;
+}
+
+.user-msg.success>p>span {
+    filter: hue-rotate(90deg);
+}
+
+.user-msg.success {
+    border: 5px solid #1f97f4
+}
+
+.user-msg.success>span {
+    background-color: #1f97f4
+}
+
+.user-msg.user-msg.error {
+    border: 5px solid rgb(224, 70, 70);
+}
+
+.user-msg.error>span {
+    background-color: rgb(224, 70, 70);
+}
+
+.tooltip {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tooltip [class*=tip] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    background-color: #eee;
+    text-align: center;
+    padding: 0px 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    right: -15px;
+    font-size: 1rem;
+    cursor: default;
+}
+
+@media (max-width: 1000px) {
+    .tooltip {
+        height: 100%;
+        align-items: center;
+    }
+}
+
+.tooltip:hover [class*=tip] {
+    visibility: visible;
+}

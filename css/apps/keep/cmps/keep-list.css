@@ -1,0 +1,160 @@
+@import url('./note-txt.css');
+@import url('./note-img.css');
+@import url('./note-video.css');
+@import url('./note-todos.css');
+
+/* LIST */
+.notesList {
+	display: grid;
+	grid-auto-flow: dense;
+	grid-gap: 2em;
+	width: 90%;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+li.note-container {
+	position: relative;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+
+	margin-bottom: 20px;
+	object-fit: cover;
+
+	width: 250px;
+	min-height: 250px;
+
+	padding: 2px;
+	border-radius: 10px;
+
+	box-shadow: 0 1px 2px 0 #abad9a73, 0 1px 3px 1px rgba(218, 221, 226, 0.787);
+	transition: 0.8s ease;
+
+	align-self: start;
+}
+
+.note {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: 0.8s ease;
+	position: relative;
+	flex: 1;
+	border-radius: 8px;
+}
+
+.note-container:hover {
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.note-control-panel {
+	position: absolute;
+	display: flex;
+	bottom: -30px;
+	left: 0;
+	right: 0;
+	justify-content: space-between;
+}
+
+/* FOR ALL NOTES */
+
+button.button-keep {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+img.keep-button-img {
+	width: 20px;
+	position: relative;
+	left: 0;
+	cursor: pointer;
+}
+
+.keep-add-text {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+/* COLOR CIRCLES */
+.circle {
+	border-radius: 50%;
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+}
+
+.circle-pink {
+	background-color: lightcoral;
+}
+.circle-gray {
+	background-color: gray;
+}
+.circle-lightblue {
+	background-color: lightblue;
+}
+.circle-lightgreen {
+	background-color: lightgreen;
+}
+
+/* PARTICULAR NOTE DEFS */
+/* .note-img {
+	text-align: center;
+	justify-content: space-around;
+} */
+
+.note-todos {
+	text-align: left;
+	display: inline-block;
+}
+
+.note-txt {
+	display: inline-block;
+	text-align: justify;
+	padding: 5px;
+}
+
+/* .note-video {
+	text-align: center;
+	justify-content: space-around;
+} */
+
+/* .button-keep.long-txt {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border: 1px solid black;
+	border: none;
+} */
+
+/* .keep-video {
+	object-fit: contain;
+	max-width: 95%;
+	border-radius: 8px;
+} */
+
+/* .todos-completed {
+	font-size: small;
+	font-style: italic;
+} */
+
+/* .completed {
+	text-decoration: line-through;
+} */
+
+/* MEDIA QUERIES */
+
+@media (max-width: 450px) {
+	/* .notesList {
+		/* grid-template-rows: repeat(3, minmax(100px, 1fr)); */
+	/* grid-template-columns: 1fr; */
+	/* align-content: center; */
+	/* } */
+	.note-container {
+		display: flex;
+		justify-content: center;
+	}
+}

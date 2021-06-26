@@ -1,0 +1,99 @@
+.email-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-inline: 10px;
+    padding-block-start: 10px;
+    cursor: pointer;
+    background-color: #f2f5f5cc;
+    color: #202124;
+    border-bottom: 0.5px solid rgba(128, 128, 128, 0.164);
+}
+
+.email-preview:hover {
+    outline: 1px solid #a7a7a7;
+}
+
+.email-preview-top {
+    display: flex;
+    align-items: center;
+}
+
+.email-preview-star-state {
+    width: 25px;
+    height: 20px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.email-preview-star-state.white {
+    background-image: url('../../../../img/apps/email/starwhite.png');
+    opacity: 0.16;
+}
+
+.email-preview-star-state.white:hover {
+    background-image: url('../../../../img/apps/email/staryellow.png');
+    opacity: 1;
+}
+
+.email-preview-star-state.yellow {
+    background-image: url('../../../../img/apps/email/staryellow.png');
+}
+
+.email-preview-star-state.yellow:hover {
+    background-image: url('../../../../img/apps/email/starwhite.png');
+    opacity: 0.16;
+}
+
+.email-preview-subject {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-basis: 62%;
+    padding-block: 5px;
+}
+
+.email-preview-read-state {}
+
+.email-preview-body {
+    flex-basis: 40%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-block: 10px;
+    padding-inline-start: 25px;
+}
+
+.email-preview-body:not(.unread) {
+    color: #7E7E7E;
+}
+
+.email-preview-send-date {
+    flex-basis: 10%;
+    text-align: center;
+    padding-block: 5px;
+}
+
+.email-preview-read-state {
+    background-image: url('../../../../img/apps/email/read.png');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    padding-inline-end: 5px;
+    opacity: 0.3;
+}
+
+.email-preview-read-state:hover {
+    background-image: url('../../../../img/apps/email/unread.png');
+    opacity: 0.6
+}
+
+.email-preview-read-state.unread {
+    background-image: url('../../../../img/apps/email/unread.png');
+    opacity: 0.6;
+}
+
+.unread {
+    font-weight: 600;
+}

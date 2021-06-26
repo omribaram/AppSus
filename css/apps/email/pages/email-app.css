@@ -1,0 +1,63 @@
+.email-app {
+    display: flex;
+    height: 91vh;
+    padding-block-start: 50px;
+}
+
+.modal-container {
+    inset: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .1);
+    z-index: 1;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    bottom: -5px;
+    right: -5px;
+    height: 600px;
+    width: 700px;
+    background-color: #fff;
+}
+
+.btn-email-compose {
+    width: 100px;
+    height: 100px;
+}
+
+
+/****************************/
+
+.email-app {
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr;
+}
+
+@media (max-width: 1300px) {
+    .email-app {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 1fr;
+    }
+}
+
+@media (max-width: 850px) {
+    .email-app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 10px 1fr 1fr;
+        width: 95%;
+        padding-block-start: 30px;
+    }
+    .modal-content {
+        height: 400px;
+        width: 90%;
+    }
+}
+
+
+/****************************/

@@ -1,0 +1,42 @@
+.email-read-status {
+    position: relative;
+    display: flex;
+    margin-inline: 20px;
+    margin-block: 10px;
+    background-color: rgb(219, 219, 219);
+    border-radius: 10px;
+    height: 23px;
+}
+
+.email-read-status>span {
+    position: absolute;
+    text-align: center;
+    width: 95%;
+    color: rgb(60, 60, 60)
+}
+
+.email-read-status-progress {
+    background-color: rgb(165, 165, 165);
+    height: 23px;
+    border-radius: 10px;
+    transition: width 0.6s;
+}
+
+@media (max-width: 1300px) {
+    .email-read-status {
+        width: 130px;
+    }
+}
+
+@media (max-width: 850px) {
+    .email-read-status {
+        width: auto;
+        height: 33px;
+        margin-block: 0;
+        border-radius: 16px;
+    }
+    .email-read-status-progress {
+        height: 33px;
+        border-radius: 16px;
+    }
+}

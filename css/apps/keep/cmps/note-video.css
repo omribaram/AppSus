@@ -1,0 +1,12 @@
+.note-video {
+	text-align: center;
+	justify-content: space-around;
+}
+
+.keep-video {
+	/* padding-top: 10px; */
+	/* object-fit: fill; */
+	object-fit: contain;
+	max-width: 95%;
+	border-radius: 8px;
+}
