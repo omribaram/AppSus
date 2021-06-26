@@ -85,7 +85,6 @@
     padding-block-end: 10px;
     padding-inline: 25px;
     height: 600px;
-    width: 700px;
     background-color: #fff;
     border-radius: 15px;
     border: 5.5px solid #5da2bf;
@@ -124,15 +123,6 @@
     width: 75%;
 }
 
-.app-footer {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 3vh;
-    width: 100%;
-}
-
 .book-list,
 .book-add-list {
     display: flex;
@@ -147,6 +137,8 @@
     padding-block-start: 20px;
     padding-block-end: 40px;
     padding-inline: 40px;
+    overflow-x: hidden;
+    margin-block-start: 15px;
 }
 
 .book-add-list {
@@ -327,34 +319,6 @@
     width: 75%;
 }
 
-@media (max-width: 1500px) {
-    .book {
-        width: 98%;
-    }
-    .books-nav {
-        width: 99%;
-    }
-    .book-app {
-        padding-inline: 30px;
-    }
-}
-
-@media (max-width: 900px) {
-    .book-app {
-        padding-inline-start: 0;
-    }
-    .app-header .stripe-text {
-        font-size: 5rem;
-    }
-    .book-filter {
-        flex-direction: column;
-    }
-}
-
-.book button {
-    justify-self: flex-end;
-}
-
 .book-img {
     display: flex;
     align-items: flex-start;
@@ -376,18 +340,6 @@
     right: -30px;
     height: 100%;
     border-right: 1px solid #c9c9c9;
-}
-
-.book-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-basis: 65%;
-    gap: 20px;
-    height: 100%;
-    padding-inline-start: 30px;
-    position: relative;
-    flex-grow: 1;
 }
 
 .book-title {
@@ -416,6 +368,22 @@
     width: 80%;
     left: 10%;
     border-top: 1px solid #c9c9c9;
+}
+
+.book button {
+    justify-self: flex-end;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-basis: 65%;
+    gap: 20px;
+    height: 100%;
+    padding-inline-start: 30px;
+    position: relative;
+    flex-grow: 1;
 }
 
 .book-authors {
@@ -647,21 +615,21 @@
     --thumbBG: #90A4AE;
 }
 
-.book-list::-webkit-scrollbar {
+.book-app ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-.book-list::-webkit-scrollbar-thumb {
+.book-app ::-webkit-scrollbar-thumb {
     background: linear-gradient(0deg, #dbf8ff 0%, #858585 65%);
     border-radius: 10px;
 }
 
-.book-list::-webkit-scrollbar-thumb:hover {
+.book-app ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(13deg, #dbf8ff 0%, #00b7ff 100%);
 }
 
-.book-list::-webkit-scrollbar-track {
+.book-app ::-webkit-scrollbar-track {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: inset 7px 10px 12px #f0f0f0;
@@ -753,4 +721,88 @@
 
 .book-app .tooltip:hover [class*=tip] {
     visibility: visible;
+}
+
+@media (max-width: 1500px) {
+    .book {
+        width: 98%;
+    }
+    .books-nav {
+        width: 99%;
+    }
+    .book-app {
+        padding-inline: 30px;
+    }
+}
+
+@media (max-width:1150px) {
+    .book-app {
+        padding-inline-start: 0;
+        overflow: hidden;
+    }
+    .book-app~.app-footer {
+        display: none;
+    }
+    .app-header .stripe-text {
+        font-size: 5rem;
+    }
+    .book-app {
+        padding-inline: 0px;
+        height: 100%;
+    }
+    .book-details {
+        flex-basis: unset;
+        padding-inline-start: unset;
+        margin-inline: 60px;
+        padding-block: 20px;
+        overflow-y: auto;
+    }
+    .book {
+        flex-direction: column;
+        align-items: center;
+        padding-block-start: 15px;
+    }
+    .book-img {
+        margin-inline-end: unset;
+    }
+    .book-img::before {
+        content: none;
+        display: none;
+        border: none
+    }
+    .book-title {
+        flex-direction: column;
+        line-height: unset;
+    }
+    .book-authors {
+        padding-inline-start: 0px;
+    }
+    .book-date {
+        padding-inline-start: 0px;
+    }
+    .book-desc {
+        width: unset;
+    }
+}
+
+@media (max-width:700px) {
+    .book-filter {
+        flex-direction: column;
+    }
+    .book-filter form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width:500px) {
+    .book-img {
+        height: 365px;
+        width: 300px;
+    }
+    .book-footer {
+        font-size: 0.7rem;
+    }
 }
