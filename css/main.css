@@ -55,6 +55,7 @@ textarea {
     align-items: center;
     height: 3vh;
     width: 100%;
+    pointer-events: none;
 }
 
 @media (max-width: 350px) {

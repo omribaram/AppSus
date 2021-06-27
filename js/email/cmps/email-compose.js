@@ -86,15 +86,12 @@ export default {
         } else if (this.note) {
             this.email.body = this.note.body;
             this.email.subject = this.note.subject
-            if (this.note.image) this.email.body += this.note.image;
-            else if (this.email.video) this.email.body += this.note.video;
-            else if (this.email.todos) this.email.body += this.note.todos;
+            if (this.note.image) this.email.body += `\n\n${this.note.image}`;
+            else if (this.note.video) this.email.body += `\n\n${this.note.video}`;
+            else if (this.note.todos) this.email.body += `\n\n${this.note.todos.map(todo=>todo.txt)}`;
         }
     },
     methods: {
-        onInput(e) {
-            this.email.body = e.target.innerText;
-        },
         setStyle(style, value) {
             switch (style) {
                 case 'size':
